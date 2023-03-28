@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="http://example.com/Stable_Diffusion/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>AI繪圖Stable_Diffusion - 托比君</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "AI\u7e6a\u5716Stable_Diffusion";
+        var mkdocs_page_input_path = "Stable_Diffusion.md";
+        var mkdocs_page_url = "/Stable_Diffusion/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> 托比君
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../dogedeck_card/">色色柴犬圖</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">AI繪圖Stable_Diffusion</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1">基本設定</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_2">文生圖</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#_3">其他參數</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#1">範例1 使用一段文字描述</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2">範例2 使用修饰词</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#3">範例3 使用修饰词與負向修飾詞</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#4">範例4 使用修饰词、負向修飾詞與其他參數</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_4">圖生圖</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_5">圖片資訊</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_6">圖片刪除</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ai">AI畫廊</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ai_1">查詢AI模型名稱</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_7">進階設定</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#ai_2">AI模型</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sampler">Sampler設定</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lora">LoRA設定</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#controlnet">Controlnet設定</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_8">出處</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">托比君</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>AI繪圖Stable_Diffusion</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="ai-stable-diffusion">AI繪圖 Stable Diffusion</h2>
+<p>Stable Diffusion是由慕尼黑大學的CompVis研究團體開發的深度學習模型，可以藉由輸入文字或圖像生成圖像。</p>
+<h3 id="_1">基本設定</h3>
+<h4 id="_2">文生圖</h4>
+<pre><code>#sdtxt2img:&lt;正向提問&gt;
+(optional)negative prompt:&lt;負向提問&gt;
+(optional)&lt;其他參數&gt;
+</code></pre>
+<p>文生圖的指令是"#sdtxt2img:"後面接正向提問的描述(prompt)~</p>
+<p>它可以是一段文字描述，也可以使用修饰词(Tag)。</p>
+<p>然後是換行後接"negative prompt:"與輸入負向提問的修飾詞,用來告訴AI不想出現的關鍵詞彙。</p>
+<p>最後是換行後接其他參數，不同參數用 "&lt;空格&gt;," 分開。</p>
+<h5 id="_3">其他參數</h5>
+<p>可以不設定，就會用預設的參數。目前有效的參數如下:</p>
+<h6 id="-model">- model</h6>
+<p>使用的AI模型</p>
+<h6 id="-model_hash">- model_hash</h6>
+<p>AI模型的雜湊值，有時AI模型檔名一樣但內容有變動,用hash值可以確保使用的模型內容是否相同。</p>
+<h6 id="-seed">- seed</h6>
+<p>生成圖片的亂數種子，用-1則每次隨機產生不同亂數種子就會生成不同的圖片唷。</p>
+<h6 id="-steps">- steps</h6>
+<p>(建議設定為10~50)
+生成圖像所需的叠代步數。每增加一步叠代，都會使AI模型有更多的機會去比對提示和當前結果並進行調整。
+更高的叠代步數需要更多的計算時間。但過高步數並不一定意味著更好的結果。
+叠代步數低會降低生成圖像的質量。
+通常AI模型的製作人會提供合適的steps參數範圍。</p>
+<h6 id="-sampler">- sampler</h6>
+<p>AI模型會根據採樣器(sample)與設定的叠代步數(steps)持續更新影像，不同的採樣器會有不同的效果。
+可以參考<a href="https://newmediamax.com.tw/article/1irhn8jalo65f.html">技術文章</a> 有做深入的比較與探討。</p>
+<h6 id="-cfg_scale">- cfg_scale</h6>
+<p>提示詞相關性。數值高低會影像AI模型產生影像時參考正向與反向描述的程度。</p>
+<p>越高，產生的圖片與提示詞有越高的相識度。</p>
+<p>越低，產生的圖片與提示詞說明會較不相似。</p>
+<h6 id="-size">- size</h6>
+<p>生成的影像尺寸，&lt;寬度&gt;x&lt;高度&gt;，受限於顯示卡的記憶體，目前最大為768x768。</p>
+<h6 id="-batch_size">- batch_size</h6>
+<p>每次生成的數量，受限於linebot回傳只能回5筆訊息，由於需留1筆訊息作為文字說明，目前只能設定最多到4張。</p>
+<h5 id="1">範例1 使用一段文字描述</h5>
+<pre><code class="language-c">#sdtxt2img:a horrible dog is running in the playground
+</code></pre>
+<p><img alt="Screenshot" src="../img/sdtxt2img_ex1.jpg" /></p>
+<h5 id="2">範例2 使用修饰词</h5>
+<pre><code class="language-c">#sdtxt2img:white background, cute cartoon baby rabbit, full body, steampunk, rocketman, goggles over head, hairy, jacket, realistic, rabbit teeth, happy
+</code></pre>
+<p><img alt="Screenshot" src="../img/sdtxt2img_ex2.jpg" /></p>
+<h5 id="3">範例3 使用修饰词與負向修飾詞</h5>
+<p>請在修饰词與負向修飾詞之間的文字要換行。</p>
+<pre><code class="language-c">#sdtxt2img:white background, cute cartoon baby rabbit, full body, steampunk, rocketman, goggles over head, hairy, jacket, realistic, rabbit teeth, happy
+Negative prompt:wear glasses
+</code></pre>
+<p><img alt="Screenshot" src="../img/sdtxt2img_ex3.jpg" /></p>
+<h5 id="4">範例4 使用修饰词、負向修飾詞與其他參數</h5>
+<p>請在修饰词與負向修飾詞之間、負向修飾詞與其他參數之間的文字要換行。</p>
+<p>在前幾次的範例中都沒有設定 seed 的參數，預設會是-1，就會隨機產生一個變數使得相同修飾詞也會得到不同圖片。</p>
+<p>而這次在其他參數中有將 'Seed' 這個參數設定為固定的數值，所以用相同的參數都會生成同樣的圖片。</p>
+<pre><code class="language-c">#sdtxt2img:white background, cute cartoon baby rabbit, full body, steampunk, rocketman, goggles over head, hairy, jacket, realistic, rabbit teeth, happy
+Negative prompt:wear glasses
+Size: 512x768, Seed: 1791574510, Model: chilloutmix_NiPrunedFp32Fix, Steps: 26, Sampler: DPM++ SDE Karras, CFG scale: 7, Model hash: fc2511737a'
+</code></pre>
+<p><img alt="Screenshot" src="../img/sdtxt2img_ex4.jpg" /></p>
+<h4 id="_4">圖生圖</h4>
+<p>準備中 ....</p>
+<h4 id="_5">圖片資訊</h4>
+<pre><code class="language-None">#sdinfo
+</code></pre>
+<p>用這個指令可以找出上一次產生的圖的修饰词和其他設定歐。當Seed設定為-1，也就是隨機生成圖片時
+如果生成喜歡的圖可以用這個指令取得這次隨機Seed實際的數值。之後就可以固定Seed數值做其他參數的微調唷。</p>
+<p><img alt="Screenshot" src="../img/sdinfo.jpg" /></p>
+<h4 id="_6">圖片刪除</h4>
+<pre><code class="language-None">#sddelete
+</code></pre>
+<p>用這個指令可以刪除上一次產生的圖，在line群未讀的人就無法再看到那張圖片囉。</p>
+<p><img alt="Screenshot" src="../img/sddelete.jpg" /></p>
+<h4 id="ai">AI畫廊</h4>
+<pre><code class="language-None">#sdgallery
+</code></pre>
+<p>叫出網頁連結，裡面有圖片與修饰词可以一鍵複製，再回到line群貼上就可以做出大至相同的圖片唷。</p>
+<p>叫出連結</p>
+<p><img alt="Screenshot" src="../img/sdtxt2img_gallery1.jpg" /></p>
+<p>點進去就會顯示縮圖的圖片畫廊，找喜歡的點進去</p>
+<p><img alt="Screenshot" src="../img/sdtxt2img_gallery2.jpg" /></p>
+<p>就會顯示原始大小的圖片，點"複製Prompt"就會將修饰词保存到剪貼板</p>
+<p><img alt="Screenshot" src="../img/sdtxt2img_gallery3.jpg" /></p>
+<p>再回到line，在對話框直接貼上就可以送出囉</p>
+<p><img alt="Screenshot" src="../img/sdtxt2img_gallery4.jpg" /></p>
+<h4 id="ai_1">查詢AI模型名稱</h4>
+<pre><code class="language-None">#sdmodels
+</code></pre>
+<p>這個功能可以列出目前有安裝的模型名稱</p>
+<p><img alt="Screenshot" src="../img/sdmodels.jpg" /></p>
+<h3 id="_7">進階設定</h3>
+<h4 id="ai_2">AI模型</h4>
+<h4 id="sampler">Sampler設定</h4>
+<h4 id="lora">LoRA設定</h4>
+<h4 id="controlnet">Controlnet設定</h4>
+<h3 id="_8">出處</h3>
+<p>CompVis <a href="https://github.com/CompVis/stable-diffusion">Github</a></p>
+<p>網頁版 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui">Github</a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../dogedeck_card/" class="btn btn-neutral float-left" title="色色柴犬圖"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../dogedeck_card/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
